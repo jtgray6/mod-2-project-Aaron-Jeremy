@@ -1,4 +1,4 @@
-README PLACEHOLDER
+# Brew 'n' Review
 
 User Stories
 1) As a new user, I want to be able to create and account.
@@ -9,4 +9,11 @@ User Stories
 
 Reach goals:
 1) Newsfeed of reviews
-2) Search by beer name keywords
+2) Search functionality(on beer_info, search bar that searches beer names, on review_info, search bar that searches review descriptions, etc.)
+
+
+To-do list:
+- Add validations to user, review, and beer models.
+- Add `home.html`, `beer_info.html`, `beer_style.html`, and `review_info.html`.
+- Add javascript files for each page.
+- Add images for beer_styles.
