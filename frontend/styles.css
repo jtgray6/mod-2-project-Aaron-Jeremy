@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+
+header {
+    background: url('https://envato-shoebox-0.imgix.net/f309/08f0-c751-4da9-ba9f-62c7a94fd21f/_K4A7247.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=15745df6fd33f570f570abb0259ca7d0');
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-family: 'Special Elite', cursive;
+    font-size: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Special Elite', cursive;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#signuplink {
+    text-decoration: underline;
+
+}
+
+#signuplink:link {
+    cursor: pointer;
+}
+
+body {
+    background: url('https://envato-shoebox-0.imgix.net/f309/08f0-c751-4da9-ba9f-62c7a94fd21f/_K4A7247.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=15745df6fd33f570f570abb0259ca7d0');
+}
+
+#createuser {
+    display: flex;
+    margin: auto;
+    width: 200px;
+    padding-top: 10rem;
+    
+    
+}
