@@ -1,5 +1,19 @@
 const $select = document.querySelector('select')
 const $section = document.querySelector('section')
+const $greeting = document.querySelector('.login-greeting')
+const $textarea = document.querySelector('#user_id')
+
+const params = new URLSearchParams(document.location.search)
+const user_id = params.get('id')
+
+fetch(`http://localhost:4000/users/${user_id}`)
+    .then(response => response.json())
+    .then(userGreeting)
+
+function userGreeting(user) {
+    $greeting.innerText = `Hi, ${user.username}!`
+    $textarea.innerText = user.id
+}
 
 fetch("http://localhost:4000/styles")
     .then(response => response.json())

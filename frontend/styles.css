@@ -64,3 +64,12 @@ section {
 input, select {
     margin-bottom: 1rem;
 }
+
+div {
+    width: 50%;
+    padding-left: 2rem;
+    background-color: rgb(245, 245, 244);
+    margin-left: 2rem;
+    height: 100%;
+    box-shadow: 2px 2px 5px black;
+}
