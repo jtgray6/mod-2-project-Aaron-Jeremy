@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brew-n-Review | Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <h1><a href='http:localhost:3000'>Brew n' Review</a></h1>
+    <h2 class="login-greeting">
+    </h2>
+    </header>
+    <section>
+        <form id="createReview">
+        <!-- <form id="createReview" method="POST" action="http://localhost:4000/reviews"> -->
+            <label for="beer-name">Beer Name</label>
+            <input id="beer-name" type="text" name="name" placeholder="Beer Name">
+            <label for="brewery">Brewery</label>
+            <input id="brewery" name="brewery" type="text" placeholder="Brewery Name">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" wrap="soft" placeholder="Write your Review here!"></textarea>
+            <label for="rating">Rating</label>
+            <input id="rating" name="rating" type="number" step="0.1" min="0" max="5" placeholder="Number of Stars">
+            <select name="style">
+                <option value="" disabled selected>Select a style</option>
+            </select>
+            <textarea id="user_id" name="id" hidden></textarea>
+            <input type="submit" value="Submit Review">
+        </form>
+    </section>
+    <script src="home.js"></script>
+</body>
+</html>
