@@ -10,10 +10,17 @@ class UsersController < ApplicationController
     end
 
     def create
-        User.create({
+        @new_user = User.new(
             username: params[:username],
             password: params[:password]
-        })
-        redirect_to 'http://localhost:3000'
+        )
+
+        if @new_user.valid?
+            @new_user.save
+            redirect_to 'http://localhost:3000/index.html'
+        else
+            # redirect_to 'http://localhost:3000/signUp.html?failure=true&type=username'
+            render json: { error: @new_user.errors.full_messages }
+        end
     end
 end

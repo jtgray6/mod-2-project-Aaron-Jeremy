@@ -23,4 +23,4 @@ wheat = Style.create(name: "Wheat", image_url: "./images/wheat.jpg")
 
 shiner_bock = Beer.create(name: "Shiner Bock", brewery: "Spoetzl Brewery", abv: 4.5, style: bock)
 
-Review.create(description: "Kinda gross, very malty", rating: 1.5, beer: shiner_bock)
+Review.create(description: "Kinda gross, very malty", rating: 1.5, beer: shiner_bock, user: User.all.first)
