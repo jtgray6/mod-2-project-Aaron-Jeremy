@@ -29,18 +29,14 @@ function displayReviews(reviews) {
 
 function displayReview(review) {
     let $card = document.createElement('div')
-    
-    fetch(`http://localhost:4000/styles/${review.beer.style_id}`)
-        .then(response => response.json())
-        .then(style => {
-            $card.innerHTML = `
-                <h2>${review.beer.name}</h2>
-                <h3>${style.name}</h3>
-                <h3>${review.beer.brewery}</h3>
-                <h2>${review.rating}</h2>
-                <p>${review.description}</p>
-            `
-        })
+
+    $card.innerHTML = `
+        <h2>${review.beer.name}</h2>
+        <h3>${review.beer.style.name}</h3>
+        <h3>${review.beer.brewery}</h3>
+        <h2>${review.rating}</h2>
+        <p>${review.description}</p>
+    `
 
     return $card
 }
