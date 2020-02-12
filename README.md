@@ -17,3 +17,15 @@ To-do list:
 - Add `home.html`, `beer_info.html`, `beer_style.html`, and `review_info.html`.
 - Add javascript files for each page.
 - Add images for beer_styles.
+
+
+### Method Override  
+#### DELETE  
+In HTML:  
+`<input type="hidden" name="_method" value="delete">`  
+In Rails:  
+Go to `config/application.rb` and add to Application Class `config.middleware.use Rack::MethodOverride`  
+  
+#### UPDATE  
+In HTML:  
+`<input type="hidden" name="_method" value="put">`  
