@@ -33,4 +33,19 @@ class ReviewsController < ApplicationController
 
         redirect_to "http://localhost:3000/home.html?id=#{@user.id}"
     end
+
+    def update
+        @update_review = Review.find(params[:id])
+        @beer = @update_review.beer
+        @user = @update_review.user
+        # byebug
+        @update_review.update(
+            description: params[:description],
+            rating: params[:rating],
+            beer_id: @beer.id,
+            user_id: @user.id
+        )
+        @user = User.find(params[:user_id])
+        redirect_to "http://localhost:3000/home.html?id=#{@user.id}"
+    end
 end
