@@ -1,5 +1,5 @@
 const $select = document.querySelector('select')
-const $section = document.querySelector('section')
+const $section = document.querySelector('#cards')
 const $greeting = document.querySelector('.login-greeting')
 const $textarea = document.querySelector('#user_id')
 
@@ -50,10 +50,9 @@ function displayReview(review) {
         <h3>${review.beer.brewery}</h3>
         <h2>${review.rating}</h2>
         <p>${review.description}</p>
-        <form method="POST" action="http://localhost:4000/reviews/${review.id}">
-            <input type="submit" value="Edit"/>
-            <input type="hidden" name="_method" value="put">
-        </form>
+
+        <a href="editreview.html?id=${review.id}&user=${user_id}"><button type="button">Edit</button></a>
+
         <form method="POST" action="http://localhost:4000/reviews/${review.id}">
             <input type="submit" value="Delete"/>
             <input type="hidden" name="_method" value="delete">
@@ -63,3 +62,8 @@ function displayReview(review) {
 
     return $card
 }
+
+{/* <form method="POST" action="http://localhost:4000/reviews/${review.id}">
+            <input type="submit" value="Edit"/>
+            <input type="hidden" name="_method" value="put">
+</form> */}
