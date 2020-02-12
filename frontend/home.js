@@ -32,7 +32,7 @@ function styleToOption(style) {
     return $option
 }
 
-fetch(`http://localhost:4000/reviews`)
+fetch(`http://localhost:4000/reviews?id=${user_id}`)
     .then(response => response.json())
     .then(displayReviews)
 
