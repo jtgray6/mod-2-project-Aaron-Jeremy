@@ -50,6 +50,15 @@ function displayReview(review) {
         <h3>${review.beer.brewery}</h3>
         <h2>${review.rating}</h2>
         <p>${review.description}</p>
+        <form method="POST" action="http://localhost:4000/reviews/${review.id}">
+            <input type="submit" value="Edit"/>
+            <input type="hidden" name="_method" value="put">
+        </form>
+        <form method="POST" action="http://localhost:4000/reviews/${review.id}">
+            <input type="submit" value="Delete"/>
+            <input type="hidden" name="_method" value="delete">
+            <input type="hidden" name="user_id" value="${user_id}">
+        </form>
     `
 
     return $card
