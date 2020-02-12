@@ -45,8 +45,8 @@ function displayReview(review) {
     let $card = document.createElement('div')
 
     $card.innerHTML = `
-        <h2>${review.beer.name}</h2>
-        <h3>${review.beer.style.name}</h3>
+        <h2><a href="http://localhost:3000/show_beer.html?id=${review.beer.id}&user=${user_id}">${review.beer.name}</a></h2>
+        <h3><a href="http://localhost:3000/show_style.html?id=${review.beer.style.id}&user=${user_id}">${review.beer.style.name}</a></h3>
         <h3>${review.beer.brewery}</h3>
         <h2>${review.rating}</h2>
         <p>${review.description}</p>
