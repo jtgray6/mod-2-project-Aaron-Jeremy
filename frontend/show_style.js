@@ -1,8 +1,15 @@
 const params = new URLSearchParams(document.location.search)
 const id = params.get('id')
 const user_id = params.get('user')
+const $greeting = document.querySelector('.login-greeting')
 const $section = document.querySelector('section')
 const $nav = document.querySelector('nav')
+
+function userGreeting(user) {
+    $greeting.innerHTML = `Hi, ${user.username}!<br><br>
+    <a href="/"><button type="button">Log Out</button></a>`
+    $textarea.innerText = user.id
+}
 
 if (id != null) {
     fetch(`http://localhost:4000/styles/${id}`)

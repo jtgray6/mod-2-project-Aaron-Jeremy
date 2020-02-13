@@ -14,7 +14,8 @@ fetch(`http://localhost:4000/users/${user_id}`)
     .then(userGreeting)
 
 function userGreeting(user) {
-    $greeting.innerText = `Hi, ${user.username}!`
+    $greeting.innerHTML = `Hi, ${user.username}!<br><br>
+    <a href="/"><button type="button">Log Out</button></a>`
     $textarea.innerText = user.id
 }
 
