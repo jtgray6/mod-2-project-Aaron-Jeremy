@@ -92,3 +92,9 @@ button {
     display: flex;
     flex-direction: column;
 }
+
+#beer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
