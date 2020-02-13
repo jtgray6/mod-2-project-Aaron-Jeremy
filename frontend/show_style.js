@@ -1,10 +1,9 @@
 const params = new URLSearchParams(document.location.search)
-
 const id = params.get('id')
-
 const user_id = params.get('user')
 const $greeting = document.querySelector('.login-greeting')
 const $section = document.querySelector('section')
+const $nav = document.querySelector('nav')
 
 function userGreeting(user) {
     $greeting.innerHTML = `Hi, ${user.username}!<br><br>
@@ -48,3 +47,16 @@ else {
             })
         })
 }
+
+function generateNavBar() {
+    let $ul = document.createElement('ul')
+    $ul.style.listStyleType = "none"
+
+    $ul.innerHTML = `
+        <a href="http://localhost:3000/home.html?id=${user_id}"><li>Home</li></a>
+        <a href="http://localhost:3000/show_beer.html?user=${user_id}"><li>Beers</li></a>
+        <a href="http://localhost:3000/show_style.html?user=${user_id}"><li>Styles</li></a>
+    `
+    $nav.appendChild($ul)
+}
+generateNavBar()
