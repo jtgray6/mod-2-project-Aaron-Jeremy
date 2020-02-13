@@ -1,10 +1,10 @@
 class ReviewsController < ApplicationController
     def index
-        if params[:id] != "null"
-            @reviews = Review.where(user_id: params[:id])
-        else
+        # if params[:id] != "null"
+        #     @reviews = Review.where(user_id: params[:id])
+        # else
             @reviews = Review.all
-        end
+        # end
         render json: @reviews, include: [:user, :beer => {include: :style}]
     end
 
