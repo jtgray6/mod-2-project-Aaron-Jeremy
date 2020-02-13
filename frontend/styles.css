@@ -3,7 +3,7 @@
 header {
     display: flex;
     justify-content: space-between;
-    height: 15rem;
+    height: 12rem;
 }
 
 h1 {
@@ -38,24 +38,71 @@ body {
     flex-direction: column;
 }
 
+/* SIGNUP PAGE **************/
+
+#signup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+#signup h2 {
+    font-size: 3rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
 #createuser {
     display: flex;
     margin: auto;
+    font-size: 20px;
     width: 200px;
-    padding-top: 10rem;  
+    padding: 2rem;  
+    box-shadow: 2px 2px 5px black;
+    background-color: rgb(245, 245, 244);
+    border-radius: 15px;
+}
+
+#submit-user {
+    border-radius: 8px;
+}
+
+/* HOME **************/
+
+nav {
+    align-self: center;
+}
+
+ul {
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+}
+
+nav ul li {
+    padding: 0rem 1rem 0rem 1rem;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+nav ul li:hover {
+    font-size: 50px;
 }
 
 section {
     display: flex;
-
 }
 
 #createReview {
     width: 30%;
-    padding: 2rem;
+    padding: 0rem 2rem 0rem 2rem;
     background-color: rgb(245, 245, 244);
     box-shadow: 2px 2px 5px black;
     height: fit-content;
+    border-radius: 5px;
 }
 
 #description {
@@ -68,13 +115,11 @@ input, select {
 }
 
 div {
-    padding: 2rem;
+    padding: 0rem 2rem 0rem 2rem;
     background-color: rgb(245, 245, 244);
     margin-left: 2rem;
-    height: 100%;
     box-shadow: 2px 2px 5px black;
-    margin-bottom: 2rem;
-
+    border-radius: 5px;
 }
 
 #cards {
@@ -88,13 +133,39 @@ button {
     margin-bottom: 0.5rem;
 }
 
+/* STYLE-INFO *********************/
+
 #style_beers {
     display: flex;
     flex-direction: column;
 }
 
+/* BEER-INFO **********************/
+
 #beer-info {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#beer-list {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+#beer-list a {
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: rgb(245, 245, 244);
+    margin-left: 2rem;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 5px;
+}
+
+a div.beer {
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.beer:hover {
+    font-size: 20px;
 }

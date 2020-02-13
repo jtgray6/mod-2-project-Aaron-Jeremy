@@ -5,7 +5,7 @@ class UsersController < ApplicationController
             if @user
                 redirect_to "http://localhost:3000/home.html?id=#{@user.id}"
             else
-                redirect_to 'http://localhost:3000/index.html'
+                redirect_to 'http://localhost:3000/index.html?login-error=true'
             end
         else
             redirect_to 'http://localhost:3000/index.html'
@@ -30,8 +30,8 @@ class UsersController < ApplicationController
             @new_user.save
             redirect_to 'http://localhost:3000/index.html'
         else
-            # redirect_to 'http://localhost:3000/signUp.html?failure=true&type=username'
-            render json: { error: @new_user.errors.full_messages }
+            redirect_to 'http://localhost:3000/signUp.html?failure=true'
+            # render json: { error: @new_user.errors.full_messages }
         end
     end
 end
