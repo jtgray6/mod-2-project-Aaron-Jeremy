@@ -1,11 +1,11 @@
 class StylesController < ApplicationController
     def index
         @styles = Style.all
-        render json: @styles
+        render json: @styles, include: [:beers]
     end
 
     def show
         @style = Style.find(params[:id])
-        render json: @style
+        render json: @style, include: [:beers]
     end
 end
