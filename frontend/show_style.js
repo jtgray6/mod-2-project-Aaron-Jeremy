@@ -42,7 +42,7 @@ else {
         .then(styles => {
             styles.map (style => {
                 const style_name = document.createElement('h2')
-                style_name.innerHTML = `<a href='http://localhost:3000/show_style.html?id=${style.id}'>${style.name}</a>`
+                style_name.innerHTML = `<a href='http://localhost:3000/show_style.html?id=${style.id}&user=${user_id}'>${style.name}</a>`
                 $section.append(style_name)
             })
         })
