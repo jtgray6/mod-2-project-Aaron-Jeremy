@@ -2,7 +2,7 @@ const params = new URLSearchParams(document.location.search)
 
 const id = params.get('id')
 
-const user_id = params.get('user_id')
+const user_id = params.get('user')
 
 const $section = document.querySelector('section')
 
