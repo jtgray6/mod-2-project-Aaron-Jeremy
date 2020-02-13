@@ -1,7 +1,13 @@
 class BeersController < ApplicationController
     def index
-        @beers = Beer.all
+        if params[:search]
+            @beers = Beer.where("name LIKE ?", "%#{params[:search]}%") && Beer.where("brewery LIKE ?", "%#{params[:search]}%")
+        else
+            @beers = Beer.all
+        end
+        
         render json: @beers, include: :style
+        # redirect_to 'localhost:3000/show_beer.html'
     end
 
     def show

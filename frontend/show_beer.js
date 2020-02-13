@@ -2,10 +2,12 @@ const $beerInfo = document.querySelector('#beer-info')
 const $beerList = document.querySelector('#beer-list')
 const $greeting = document.querySelector('.login-greeting')
 const $nav = document.querySelector('nav')
+const $textarea = document.querySelector('textarea')
 
 const params = new URLSearchParams(document.location.search)
 const user_id = params.get('user')
 const id = params.get('id')
+const search = params.get('search')
 
 // Get user info and greet them
 fetch(`http://localhost:4000/users/${user_id}`)
@@ -14,6 +16,8 @@ fetch(`http://localhost:4000/users/${user_id}`)
 
 function userGreeting(user) {
     $greeting.innerText = `Hi, ${user.username}!`
+    $textarea.innerText = user_id
+
 }
 
 function generateNavBar() {
@@ -34,7 +38,11 @@ if (id != null) {
     fetch(`http://localhost:4000/beers/${id}`)
         .then(response => response.json())
         .then(displayBeerInfo)
-} else {
+} else if (search != null) {
+    fetch(`http://localhost:4000/beers?search=${search}`)
+        .then(response => response.json())
+        .then(listBeers)
+}else {
     fetch("http://localhost:4000/beers")
         .then(response => response.json())
         .then(listBeers)
@@ -43,16 +51,16 @@ if (id != null) {
 // Displays a list of beer cards if there is no id is initially given
 
 function listBeers(beers) {
-    beers.map( beer => {
-        let $h2 = document.createElement('h2')
-        $h2.innerText = "Please select a beer:"
-        $h2.style.backgroundColor = "white"
-        $h2.style.padding = "1rem"
-        $h2.style.borderRadius = "5px"
-        $beerInfo.prepend($h2)
+    let $h2 = document.createElement('h2')
+    $h2.innerText = "Please select a beer:"
+    $h2.style.backgroundColor = "white"
+    $h2.style.padding = "1rem"
+    $h2.style.borderRadius = "5px"
+    $beerInfo.prepend($h2)
 
+    beers.map( beer => {
         let $card = document.createElement('a')
-        $card.href = "http://localhost:3000/show_beer.html?id=${beer.id}&user=${user_id}"
+        $card.href = `http://localhost:3000/show_beer.html?id=${beer.id}&user=${user_id}`
 
         $card.className = "beer"
         $card.innerHTML = `
@@ -77,9 +85,9 @@ function displayBeerInfo(beer) {
     let $h3 = document.createElement('h3')
     $h3.innerHTML = `Beer Style: <a href="http://localhost:3000/show_style.html?id=${beer.style.id}&user=${user_id}">${beer.style.name}</a>`
 
-    $beerSection.append($h1, $h2, $h3)
+    $beerInfo.append($h1, $h2, $h3)
     $cards = beer.reviews.map(displayReview)
-    $cards.forEach(review => $beerSection.append(review))
+    $cards.forEach(review => $beerInfo.append(review))
 }
 
 function displayReview(review) {
