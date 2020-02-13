@@ -14,11 +14,11 @@ fetch(`http://localhost:4000/users/${user_id}`)
     .then(response => response.json())
     .then(userGreeting)
 
-function userGreeting(user) {
-    $greeting.innerText = `Hi, ${user.username}!`
-    $textarea.innerText = user_id
-
-}
+    function userGreeting(user) {
+        $greeting.innerHTML = `Hi, ${user.username}!<br><br>
+        <a href="/"><button type="button">Log Out</button></a>`
+        $textarea.innerText = user_id
+    }
 
 function generateNavBar() {
     let $ul = document.createElement('ul')
@@ -74,18 +74,21 @@ function listBeers(beers) {
 
 
 
-// Displays Beer name in h1, Style as h3, and then lists cards
+// Displays Beer name in h2, Style as h4, and then lists cards
 function displayBeerInfo(beer) {
-    let $h1 = document.createElement('h1')
-    $h1.innerText = beer.name
-
     let $h2 = document.createElement('h2')
-    $h2.innerText = beer.brewery
+    $h2.innerText = beer.name
+    $h2.className = "beer-info-headers"
 
     let $h3 = document.createElement('h3')
-    $h3.innerHTML = `Beer Style: <a href="http://localhost:3000/show_style.html?id=${beer.style.id}&user=${user_id}">${beer.style.name}</a>`
+    $h3.innerText = beer.brewery
+    $h3.className = "beer-info-headers"
 
-    $beerInfo.append($h1, $h2, $h3)
+    let $h4 = document.createElement('h4')
+    $h4.innerHTML = `Beer Style: <a href="http://localhost:3000/show_style.html?id=${beer.style.id}&user=${user_id}">${beer.style.name}</a>`
+    $h4.className = "beer-info-headers"
+
+    $beerInfo.append($h2, $h3, $h4)
     $cards = beer.reviews.map(displayReview)
     $cards.forEach(review => $beerInfo.append(review))
 }
