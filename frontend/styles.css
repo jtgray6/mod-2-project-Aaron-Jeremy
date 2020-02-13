@@ -186,13 +186,12 @@ img {
 #beer-list {
     display: flex;
     align-items: center;
-    width: 50%;
 }
 
 #beer-list a {
     padding: 1rem 2rem 1rem 2rem;
     background-color: rgb(245, 245, 244);
-    margin-left: 2rem;
+    margin: 0.5rem;
     box-shadow: 2px 2px 5px black;
     border-radius: 5px;
 }
