@@ -60,7 +60,7 @@ function listBeers(beers) {
 
     beers.map( beer => {
         let $card = document.createElement('a')
-        $card.href = "http://localhost:3000/show_beer.html?id=${beer.id}&user=${user_id}"
+        $card.href = `http://localhost:3000/show_beer.html?id=${beer.id}&user=${user_id}`
 
         $card.className = "beer"
         $card.innerHTML = `
@@ -85,9 +85,9 @@ function displayBeerInfo(beer) {
     let $h3 = document.createElement('h3')
     $h3.innerHTML = `Beer Style: <a href="http://localhost:3000/show_style.html?id=${beer.style.id}&user=${user_id}">${beer.style.name}</a>`
 
-    $beerSection.append($h1, $h2, $h3)
+    $beerInfo.append($h1, $h2, $h3)
     $cards = beer.reviews.map(displayReview)
-    $cards.forEach(review => $beerSection.append(review))
+    $cards.forEach(review => $beerInfo.append(review))
 }
 
 function displayReview(review) {
