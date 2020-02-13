@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
     def index
         # if params[:id] != "null"
-        #     @reviews = Review.where(:user_id => params[:id])
+        #     @reviews = Review.where(user_id: params[:id])
         # else
-        @reviews = Review.all
+            @reviews = Review.all
         # end
         render json: @reviews, include: [:user, :beer => {include: :style}]
     end
