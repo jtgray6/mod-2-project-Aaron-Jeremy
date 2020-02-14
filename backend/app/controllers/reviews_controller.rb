@@ -14,11 +14,16 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        @beer = Beer.create(
-            name: params[:name],
-            brewery: params[:brewery],
-            style_id: params[:style]
-        )
+        found_beer = Beer.where(name: params[:name], brewery: params[:brewery], style_id: params[:style])
+        if found_beer.length == 0
+            @beer = Beer.create(
+                name: params[:name],
+                brewery: params[:brewery],
+                style_id: params[:style]
+            )
+        else
+            @beer = found_beer.first
+        end
         @user = User.find(params[:id])
         @new_review = Review.create(
             description: params[:description],

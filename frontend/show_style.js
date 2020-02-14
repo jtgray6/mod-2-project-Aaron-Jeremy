@@ -10,7 +10,7 @@ fetch(`http://localhost:4000/users/${user_id}`)
     .then(userGreeting)
 
 function userGreeting(user) {
-    $greeting.innerHTML = `Hi, ${user.username}!<br><br>
+    $greeting.innerHTML = `Hi, ${user.username}!<br>
     <a href="/"><button type="button">Log Out</button></a>`
     $textarea.innerText = user.id
 }
@@ -20,7 +20,7 @@ if (id != null) {
         .then(response => response.json())
         .then(style => {
             const title = document.createElement('h2')
-            const description = document.createElement('h4')
+            const description = document.createElement('p')
             const beers_head = document.createElement('h2')
             description.innerText = `${style.description}`
             description.className = "style_desc"
@@ -29,12 +29,19 @@ if (id != null) {
             beers_head.innerText = "Beers of this Style:"
             beers_head.className = "beers_head"
             $section.append(title, description, beers_head)
-            style.beers.map (beer => {
-                const beer_name = document.createElement('li')
-                beer_name.innerHTML = `<a href='http://localhost:3000/show_beer.html?id=${beer.id}&user=${user_id}'>${beer.name}</a>`
-                beer_name.className = "style_beer"
-                $section.append(beer_name)
-            })
+            $section.style.width = "40%"
+            if (style.beers.length > 0) {
+                style.beers.map (beer => {
+                    const beer_name = document.createElement('li')
+                    beer_name.innerHTML = `<a href='http://localhost:3000/show_beer.html?id=${beer.id}&user=${user_id}'>${beer.name}</a>`
+                    beer_name.className = "style_beer"
+                    $section.append(beer_name)
+                })}
+            else {
+                const none = document.createElement('li')
+                none.innerText = "None"
+                $section.append(none)
+            }
             const image = document.createElement('img')
             image.src = `${style.image_url}`
             $section.append(image)
