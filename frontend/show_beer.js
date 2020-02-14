@@ -53,9 +53,6 @@ if (id != null) {
 function listBeers(beers) {
     let $h2 = document.createElement('h2')
     $h2.innerText = "Please select a beer:"
-    $h2.style.backgroundColor = "white"
-    $h2.style.padding = "1rem"
-    $h2.style.borderRadius = "5px"
     $beerInfo.prepend($h2)
 
     beers.map( beer => {
@@ -78,19 +75,16 @@ function listBeers(beers) {
 function displayBeerInfo(beer) {
     let $h2 = document.createElement('h2')
     $h2.innerText = beer.name
-    $h2.className = "beer-info-headers"
 
     let $h3 = document.createElement('h3')
     $h3.innerText = beer.brewery
-    $h3.className = "beer-info-headers"
 
     let $h4 = document.createElement('h4')
     $h4.innerHTML = `Beer Style: <a href="http://localhost:3000/show_style.html?id=${beer.style.id}&user=${user_id}">${beer.style.name}</a>`
-    $h4.className = "beer-info-headers"
 
     $beerInfo.append($h2, $h3, $h4)
     $cards = beer.reviews.map(displayReview)
-    $cards.forEach(review => $beerInfo.append(review))
+    $cards.forEach(review => $beerList.append(review))
 }
 
 function displayReview(review) {
