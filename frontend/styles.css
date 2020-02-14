@@ -23,6 +23,10 @@ a {
     color: inherit;
 }
 
+a:hover {
+    font-size: 110%;
+}
+
 #signuplink {
     text-decoration: underline;
 
@@ -49,7 +53,7 @@ body {
 #signup h2 {
     font-size: 3rem;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-color: rgb(245, 245, 244);
 }
 
 #createuser {
@@ -89,7 +93,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-    font-size: 50px;
+    transform: scale(1.2);
 }
 
 section {
@@ -103,7 +107,7 @@ section {
     box-shadow: 2px 2px 5px black;
     height: fit-content;
     border-radius: 5px;
-    margin-left: 0.5rem;
+    margin: 0rem 1rem 0rem 0.5rem;
 }
 
 #description {
@@ -118,7 +122,6 @@ input, select {
 div {
     padding: 0rem 2rem 0rem 2rem;
     background-color: rgb(245, 245, 244);
-    margin-left: 2rem;
     margin-bottom: 1rem;
     box-shadow: 2px 2px 5px black;
     border-radius: 5px;
@@ -171,21 +174,19 @@ img {
     flex-direction: column;
     align-items: center;
     align-self: center;
-    width: 50%;
-    margin-top: -5rem;
-}
-
-.beer-info-headers {
+    width: fit-content;
+    margin: -5rem 0rem 1rem 0rem;
+    padding: 0rem 2rem 0rem 2rem;
     background-color: rgb(245, 245, 244);
-    padding: 1rem;
-    border-radius: 5px;
     box-shadow: 2px 2px 5px black;
-    margin-top: 0;
+    border-radius: 5px;
 }
 
 #beer-list {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
 }
 
 #beer-list a {
@@ -196,12 +197,12 @@ img {
     border-radius: 5px;
 }
 
-a div.beer {
-    padding: 1rem 2rem 1rem 2rem;
+a.beer {
+    height: fit-content;
 }
 
 .beer:hover {
-    font-size: 20px;
+    transform: scale(1.2);
 }
 
 #search-beer {
@@ -218,5 +219,10 @@ a div.beer {
 
 .style_beer {
     list-style-type: none;
+    margin-left: 1rem;
+}
+
+#style_beers h2:hover {
+    transform: scale(1.1);
     margin-left: 1rem;
 }
