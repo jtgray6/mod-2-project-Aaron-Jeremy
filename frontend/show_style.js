@@ -5,6 +5,10 @@ const $greeting = document.querySelector('.login-greeting')
 const $section = document.querySelector('section')
 const $nav = document.querySelector('nav')
 
+fetch(`http://localhost:4000/users/${user_id}`)
+    .then(response => response.json())
+    .then(userGreeting)
+
 function userGreeting(user) {
     $greeting.innerHTML = `Hi, ${user.username}!<br><br>
     <a href="/"><button type="button">Log Out</button></a>`
