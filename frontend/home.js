@@ -15,7 +15,7 @@ fetch(`http://localhost:4000/users/${user_id}`)
 
 function userGreeting(user) {
     $greeting.innerHTML = `Hi, ${user.username}!<br><br>
-    <a href="/"><button type="button">Log Out</button></a>`
+    <a class="button-link" href="/"><button type="button">Log Out</button></a>`
     $textarea.innerText = user.id
 }
 
@@ -73,7 +73,7 @@ function displayReview(review) {
         <h2>${review.rating} Stars</h2>
         <p>${review.description}</p>
 
-        <a href="editreview.html?id=${review.id}&user=${user_id}"><button type="button">Edit</button></a>
+        <a class="button-link" href="editreview.html?id=${review.id}&user=${user_id}"><button type="button">Edit</button></a>
 
         <form method="POST" action="http://localhost:4000/reviews/${review.id}">
             <input type="submit" value="Delete"/>
