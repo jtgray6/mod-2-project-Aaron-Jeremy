@@ -1,7 +1,9 @@
 class BeersController < ApplicationController
     def index
         if params[:search]
-            @beers = Beer.where("name LIKE ?", "%#{params[:search]}%") && Beer.where("brewery LIKE ?", "%#{params[:search]}%")
+            beers = Beer.where("name LIKE ?", "%#{params[:search]}%")
+            breweries = Beer.where("brewery LIKE ?", "%#{params[:search]}%")
+            @beers = beers + breweries
         else
             @beers = Beer.all
         end

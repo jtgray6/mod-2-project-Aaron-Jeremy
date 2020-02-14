@@ -12,7 +12,7 @@ fetch(`http://localhost:4000/users/${user_id}`)
     .then(userGreeting)
 
 function userGreeting(user) {
-    $greeting.innerHTML = `Hi, ${user.username}!<br><br>
+    $greeting.innerHTML = `Hi, ${user.username}!<br>
     <a href="/"><button type="button">Log Out</button></a>`
     $textarea.innerText = user_id
 }
@@ -38,6 +38,7 @@ fetch(`http://localhost:4000/reviews/${id}`)
         $form.method = "POST"
         $form.action = `http://localhost:4000/reviews/${id}`
         $form.className = "createReview"
+        $form.id = "editReview"
         $form.innerHTML = `
             <h2>Edit Review</h2>
             <label for="description">Description</label>

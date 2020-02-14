@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster|Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Special+Elite|Poppins&display=swap');
 
 header {
     display: flex;
@@ -8,11 +8,19 @@ header {
 
 * {
     transition-duration: 0.2s;
+    font-family: 'Lobster', cursive;
+    
 }
 
 h1 {
     font-family: 'Lobster', cursive;
     font-size: 50px;
+    margin-left: 2rem;
+}
+
+h2.login-greeting {
+    margin-right: 2rem;
+    margin-top: 4rem;
 }
 
 form {
@@ -20,6 +28,10 @@ form {
     flex-direction: column;
     font-family: 'Special Elite', cursive;
     font-size: 16px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -95,7 +107,7 @@ nav ul li {
     padding: 0rem 1rem 0rem 1rem;
     color: white;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 600;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
     font-family: 'Lobster', cursive;
@@ -103,11 +115,12 @@ nav ul li {
 }
 
 nav ul li:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 section {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .createReview {
@@ -120,13 +133,18 @@ section {
     margin: 0rem 1rem 0rem 0.5rem;
 }
 
+#editReview {
+    align-self: center;
+}
+
 #description {
     padding-bottom: 4rem;
     margin-bottom: 1rem;
 }
 
-input, select {
+input, select, textarea {
     margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 div {
@@ -140,12 +158,13 @@ div {
 #cards {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 25%;
 }
 
 button {
     width: 100%;
     margin-bottom: 0.5rem;
+    font-family: Arial;
 }
 
 /* STYLE-INFO *********************/
@@ -153,12 +172,14 @@ button {
 #style_beers {
     display: flex;
     flex-direction: column;
-    width: 30rem;
+    width: 12rem;
     padding: 2rem;
     box-shadow: 2px 2px 5px black;
     background-color: rgb(245, 245, 244);
     align-self: center;
+    align-items: center;
     margin-top: 4rem;
+    border-radius: 5px;
 }
 
 .beers_head {
@@ -185,7 +206,7 @@ img {
     align-items: center;
     align-self: center;
     width: fit-content;
-    margin: -5rem 0rem 1rem 0rem;
+    margin: -2rem 0rem 1rem 0rem;
     padding: 0rem 2rem 0rem 2rem;
     background-color: rgb(245, 245, 244);
     box-shadow: 2px 2px 5px black;
@@ -197,6 +218,11 @@ img {
     justify-content: center;
     align-self: center;
     width: 50%;
+    flex-wrap: wrap;
+}
+
+#beer-list:hover {
+    width: 55%;
 }
 
 #beer-list a {
@@ -207,17 +233,29 @@ img {
     border-radius: 5px;
 }
 
+#beer-list div {
+    margin: 0.5rem;
+}
+
 a.beer {
     height: fit-content;
 }
 
 .beer:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 #search-beer {
     width: 20%;
     align-self: flex-end;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+#search-input {
+    flex-grow: 1;
+    margin-right: 0.5rem;
 }
 
 /* STYLES INFO ***********************/
