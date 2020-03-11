@@ -1,31 +1,33 @@
 # Brew 'n' Review
 
-User Stories
-1) As a new user, I want to be able to create and account.
-2) As an existing user, I want to be able to login.
-3) Once logged in, I want to be able to write reviews of beers.
-4) I want to be able to select beer style from existing list.
-5) I want to be able to edit and remove reviews.
+## Overview
 
-Reach goals:
-1) Newsfeed of reviews
-2) Search functionality(on beer_info, search bar that searches beer names, on review_info, search bar that searches review descriptions, etc.)
+Brew 'n' Review is a Beer Journaling App. Users can "log in", add, read, edit, and delete their reviews, and view reviews by others. They can also filter for specific beers or breweries. In addition, there is a short description for each type of beer.
 
+## User Stories
 
-To-do list:
-- Add validations to user, review, and beer models.
-- Add `home.html`, `beer_info.html`, `beer_style.html`, and `review_info.html`.
-- Add javascript files for each page.
-- Add images for beer_styles.
+- As a new user, I want to be able to create and account.
 
+- As an existing user, I want to be able to login.
 
-### Method Override  
-#### DELETE  
-In HTML:  
-`<input type="hidden" name="_method" value="delete">`  
-In Rails:  
-Go to `config/application.rb` and add to Application Class `config.middleware.use Rack::MethodOverride`  
-  
-#### UPDATE  
-In HTML:  
-`<input type="hidden" name="_method" value="put">`  
+- Once logged in, I want to be able to write reviews of beers.
+
+- I want to be able to select beer style from existing list.
+
+- I want to be able to edit and remove reviews.
+
+## Installation Instructions
+
+1. This is a Ruby app, which means you need to install Ruby for the backend. We used Ruby 2.6.1. [Click here for instructions on installing Ruby.](https://www.ruby-lang.org/en/documentation/installation/)
+
+2. Once Ruby is installed, you'll need to run `bundle install` in the directory where you clone this repository to install all the dependencies we used. [You may need to install Rails, too.](http://installrails.com/)
+
+3. You'll need to run `rails db:migrate` to create the tables, followed by `rails db:seed` to create seed data.
+
+4. Run `rails s -p 3000` to run the rails server on port 3000.
+
+5. Open index.html.
+
+## Demo
+
+To be added.
