@@ -30,4 +30,4 @@ Brew 'n' Review is a Beer Journaling App. Users can "log in", add, read, edit, a
 
 ## Demo
 
-To be added.
+https://youtu.be/a6KY1_6MswQ
